@@ -1,67 +1,52 @@
-# :package_description
+# Filament Maintenance Mode
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/run-tests?label=tests)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/:vendor_slug/:package_slug/Check%20&%20fix%20styling?label=code%20style)](https://github.com/:vendor_slug/:package_slug/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/:vendor_slug/:package_slug.svg?style=flat-square)](https://packagist.org/packages/:vendor_slug/:package_slug)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/kaantanis/filament-maintenance-mode.svg?style=flat-square)](https://packagist.org/packages/kaantanis/filament-maintenance-mode)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/kaantanis/filament-maintenance-mode/run-tests?label=tests)](https://github.com/kaantanis/filament-maintenance-mode/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/kaantanis/filament-maintenance-mode/Check%20&%20fix%20styling?label=code%20style)](https://github.com/kaantanis/filament-maintenance-mode/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/kaantanis/filament-maintenance-mode.svg?style=flat-square)](https://packagist.org/packages/kaantanis/filament-maintenance-mode)
 
-<!--delete-->
----
-This repo can be used to scaffold a Filament plugin. Follow these steps to get started:
 
-1. Press the "Use this template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run "php ./configure.php" to run a script that will replace all placeholders throughout all the files.
-3. Make something great!
----
-<!--/delete-->
+# Don't use this package yet. It's still in development. You can also contribute to this package if you want to.
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+## Roadmap for v1.0.0 production release
+- [ ] Integrate with PreventRequestsDuringMaintenance middleware
+- [ ] Laravel maintenance mode setting e.g. retryAfter, allowedIps, secret
+- [ ] Spatie roles and permissions integration
+- [ ] Custom maintenance mode view
+- [ ] Custom maintenance mode message
+
+This package provides a maintenance mode for [Filament](https://filamentadmin.com/).  
+You can enable or disable the maintenance mode from the Filament dashboard.  
+
+This package will create a file named `down` in your storage/framework directory. 
+This is laravel's default way to enable maintenance mode.
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require :vendor_slug/:package_slug
-```
-
-You can publish and run the migrations with:
-
-```bash
-php artisan vendor:publish --tag=":package_slug-migrations"
-php artisan migrate
+composer require kaantanis/filament-maintenance-mode
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-config"
+php artisan vendor:publish --tag="filament-maintenance-mode-config"
 ```
 
 Optionally, you can publish the views using
 
 ```bash
-php artisan vendor:publish --tag=":package_slug-views"
+php artisan vendor:publish --tag="filament-maintenance-mode-views"
 ```
 
 This is the contents of the published config file:
 
 ```php
 return [
+    //
 ];
-```
-
-## Usage
-
-```php
-$skeleton = new VendorName\Skeleton();
-echo $skeleton->echoPhrase('Hello, VendorName!');
-```
-
-## Testing
-
-```bash
-composer test
 ```
 
 ## Changelog
@@ -70,15 +55,33 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Contributing
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+If you want to contribute to Filament packages, you may want to test it in a real Laravel project:
 
-## Security Vulnerabilities
+* Fork this repository to your GitHub account.
+* Create a Laravel app locally.
+* Clone your fork in your Laravel app's root directory.
+* In the /packages directory, create a branch for your fix, e.g. /enhancement/spatie-roles-support. 
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+Install the packages in your app's composer.json:
+```json
+{
+    ...
+    "require": {
+        "kaantanis/filament-maintenance-mode": "*"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/*"
+        }
+    ],
+    ...
+}
+```
 
 ## Credits
 
-- [:author_name](https://github.com/:author_username)
+- [Kaan](https://github.com/KaanTanis)
 - [All Contributors](../../contributors)
 
 ## License
