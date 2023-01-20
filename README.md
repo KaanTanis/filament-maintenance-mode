@@ -19,6 +19,9 @@ But keep mind, if you enable maintenance mode, only your session will be able to
 Because if you don't, your website will be down for everyone. But don't worry, if you forget to disable maintenance mode, you can do it from your server. Just delete the `down` file from `storage/framework` directory.
 Or `php artisan up` command.
 
+## Image
+![image](https://raw.githubusercontent.com/KaanTanis/filament-maintenance-mode/main/art/ss.png)
+
 ## Roadmap for v1.0.0 production release
 - [ ] Integrate with PreventRequestsDuringMaintenance middleware
 - [ ] Laravel maintenance mode setting e.g. retryAfter, allowedIps, secret
