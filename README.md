@@ -6,7 +6,18 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/kaantanis/filament-maintenance-mode.svg?style=flat-square)](https://packagist.org/packages/kaantanis/filament-maintenance-mode)
 
 
-# Don't use this package yet. It's still in development. You can also contribute to this package if you want to.
+# Don't use this package yet. It's still in development. But you can still use it if you want to. Working fine. You can also contribute to this package if you want to.
+
+**This package is a Filament package.**
+
+## How it works?
+When you enable maintenance mode, it will create a file named `down` in your `storage/framework` directory. When you disable maintenance mode, it will delete that file. That's it.  
+Also that's how Laravel's maintenance mode works. But you don't need `php artisan down` and `php artisan up` commands anymore. You can do it from Filament's dashboard.  
+
+But keep mind, if you enable maintenance mode, only your session will be able to access your website.  
+**So, don't forget to disable maintenance mode after you're done.**
+Because if you don't, your website will be down for everyone. But don't worry, if you forget to disable maintenance mode, you can do it from your server. Just delete the `down` file from `storage/framework` directory.
+Or `php artisan up` command.
 
 ## Roadmap for v1.0.0 production release
 - [ ] Integrate with PreventRequestsDuringMaintenance middleware
@@ -26,6 +37,7 @@ This is laravel's default way to enable maintenance mode.
 You can install the package via composer:
 
 ```bash
+// TODO: waiting for package to be published v1.0.0. So don't work yet.
 composer require kaantanis/filament-maintenance-mode
 ```
 

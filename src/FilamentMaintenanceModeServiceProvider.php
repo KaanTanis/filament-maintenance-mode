@@ -45,8 +45,6 @@ class FilamentMaintenanceModeServiceProvider extends PluginServiceProvider
      */
     public function boot()
     {
-        $kernel = $this->app->make(\Illuminate\Contracts\Http\Kernel::class);
-
         parent::boot();
 
         Livewire::component('filament-maintenance-mode::maintenance-mode-button', MaintenanceMode::class);
@@ -57,8 +55,6 @@ class FilamentMaintenanceModeServiceProvider extends PluginServiceProvider
                 fn () => view('filament-maintenance-mode::widgets.toolbar-menu'),
             );
         });
-
-        $kernel->pushMiddleware(FilamentMaintenanceMode::class);
     }
 
     public function configurePackage(Package $package): void

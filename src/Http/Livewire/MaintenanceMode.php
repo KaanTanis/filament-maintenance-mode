@@ -23,7 +23,7 @@ class MaintenanceMode extends Component
     public function mount(): void
     {
         throw_if(
-            ! Filament::auth()->check(),
+            !Filament::auth()->check(),
             AuthenticationException::class
         );
 
@@ -36,14 +36,13 @@ class MaintenanceMode extends Component
 
     public function save()
     {
-        $this->mode = ! $this->mode;
+        $this->mode = !$this->mode;
         $code = uniqid();
 
-        // todo: maybe we should use custom down file because we need access to filament admin panel
         $this->mode
             ? Artisan::call('down', [
-                '--secret' => $code,
-            ])
+            '--secret' => $code,
+        ])
             : Artisan::call('up');
 
         Notification::make()
@@ -51,8 +50,7 @@ class MaintenanceMode extends Component
             ->success()
             ->send();
 
-        // wtf is this?
-        if($this->mode){
+        if ($this->mode) {
             return redirect('/' . $code);
         }
     }

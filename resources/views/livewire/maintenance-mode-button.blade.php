@@ -20,7 +20,9 @@
         <x-filament-support::loading-indicator x-cloak="" wire:loading.delay="" wire:target="save" class="filament-button-icon w-5 h-5"/>
     </x-filament::button>
 
-    <div x-show="maintenanceMode" class="absolute bg-danger-600 text-white p-2 grid grid-cols-1 justify-end h-10 px-4 animate-pulse" style="top: 4rem; right: 0; min-width: 10px; border-top-left-radius: 5px;border-bottom-left-radius: 5px;">
+    <div x-cloak="" x-show="maintenanceMode" class="absolute bg-danger-600 text-white p-2 grid grid-cols-1 justify-end h-10 px-4 animate-pulse" style="top: 4rem; right: 0; min-width: 10px; border-top-left-radius: 5px;border-bottom-left-radius: 5px;">
         <p class="grow">Maintenance mode active</p>
     </div>
 </div>
+
+{{ session('test') }}
