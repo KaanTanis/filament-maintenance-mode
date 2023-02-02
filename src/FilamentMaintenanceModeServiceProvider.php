@@ -1,13 +1,13 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace KaanTanis\FilamentMaintenanceMode;
 
 use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 
-class SkeletonServiceProvider extends PluginServiceProvider
+class FilamentMaintenanceModeServiceProvider extends PluginServiceProvider
 {
-    public static string $name = 'skeleton';
+    public static string $name = 'filament-maintenance-mode';
 
     protected array $resources = [
         // CustomResource::class,
@@ -22,15 +22,15 @@ class SkeletonServiceProvider extends PluginServiceProvider
     ];
 
     protected array $styles = [
-        'plugin-skeleton' => __DIR__.'/../resources/dist/skeleton.css',
+        'plugin-filament-maintenance-mode' => __DIR__.'/../resources/dist/filament-maintenance-mode.css',
     ];
 
     protected array $scripts = [
-        'plugin-skeleton' => __DIR__.'/../resources/dist/skeleton.js',
+        'plugin-filament-maintenance-mode' => __DIR__.'/../resources/dist/filament-maintenance-mode.js',
     ];
 
     // protected array $beforeCoreScripts = [
-    //     'plugin-skeleton' => __DIR__ . '/../resources/dist/skeleton.js',
+    //     'plugin-filament-maintenance-mode' => __DIR__ . '/../resources/dist/filament-maintenance-mode.js',
     // ];
 
     public function configurePackage(Package $package): void
