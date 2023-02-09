@@ -1,10 +1,6 @@
 {
     "name": "kaantanis/filament-maintenance-mode",
-<<<<<<< HEAD
-    "description": "Maintenance Mode",
-=======
     "description": "Filament Maintenance Mode",
->>>>>>> 001f486caaab5ed318e6e3e13298e1dfda9bf064
     "keywords": [
         "KaanTanis",
         "laravel",
